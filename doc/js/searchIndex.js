@@ -1638,7 +1638,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\AutorModel",
             "name": "AutorModel",
-            "summary": "",
+            "summary": "Clase\u0020Autor.",
             "url": "classes/AutorModel.html"
         },                {
             "fqsen": "\\AutorModel\u003A\u003A__construct\u0028\u0029",
