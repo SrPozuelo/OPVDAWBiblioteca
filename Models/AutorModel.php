@@ -1,4 +1,13 @@
 <?php
+/**
+ * Clase Autor.
+ * 
+ * Clase que representa a un autor.
+ * 
+ * @package App/Modelo
+ * @since 26/05/2026
+ * @version 1.0
+ */
 class AutorModel extends Query
 {
     public function __construct()
