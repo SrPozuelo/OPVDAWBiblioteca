@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.2.1deb3
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 14-05-2021 a las 13:46:05
--- Versión del servidor: 10.4.14-MariaDB
--- Versión de PHP: 7.4.9
+-- Servidor: localhost:3306
+-- Tiempo de generación: 26-05-2026 a las 07:13:12
+-- Versión del servidor: 10.11.13-MariaDB-0ubuntu0.24.04.1
+-- Versión de PHP: 8.3.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `biblioteca_mvc`
+-- Base de datos: `DBOPVDAWBiblioteca`
 --
 
 -- --------------------------------------------------------
@@ -32,7 +32,7 @@ CREATE TABLE `autor` (
   `autor` varchar(150) NOT NULL,
   `imagen` varchar(100) NOT NULL,
   `estado` int(11) NOT NULL DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `autor`
@@ -41,7 +41,9 @@ CREATE TABLE `autor` (
 INSERT INTO `autor` (`id`, `autor`, `imagen`, `estado`) VALUES
 (1, 'ultima prueba', 'logo.png', 1),
 (2, 'cambiar el nombre llll', '20210514132528.jpg', 1),
-(3, 'popoiipippi', 'logo.png', 1);
+(3, 'popoiipippi', 'logo.png', 1),
+(4, 'Baldomero', 'logo.png', 1),
+(5, 'Saturnino', 'logo.png', 1);
 
 -- --------------------------------------------------------
 
@@ -56,7 +58,7 @@ CREATE TABLE `configuracion` (
   `direccion` text NOT NULL,
   `correo` varchar(100) NOT NULL,
   `foto` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `configuracion`
@@ -75,7 +77,7 @@ CREATE TABLE `detalle_permisos` (
   `id` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL,
   `id_permiso` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `detalle_permisos`
@@ -98,7 +100,7 @@ CREATE TABLE `editorial` (
   `id` int(11) NOT NULL,
   `editorial` varchar(150) NOT NULL,
   `estado` int(11) NOT NULL DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `editorial`
@@ -123,7 +125,7 @@ CREATE TABLE `estudiante` (
   `direccion` text NOT NULL,
   `telefono` varchar(15) NOT NULL,
   `estado` int(11) NOT NULL DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `estudiante`
@@ -151,7 +153,7 @@ CREATE TABLE `libro` (
   `descripcion` text NOT NULL,
   `imagen` varchar(100) NOT NULL,
   `estado` int(11) NOT NULL DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `libro`
@@ -161,7 +163,9 @@ INSERT INTO `libro` (`id`, `titulo`, `cantidad`, `id_autor`, `id_editorial`, `an
 (1, 'poiopioioiop', 50, 1, 1, '2021-05-08', 1, 1335, 'si', 'logo.png', 1),
 (2, 'Javascript', 69, 1, 1, '2021-05-08', 2, 1478, 'Domina javascript', '20210514132615.jpg', 1),
 (3, 'python para todos', 23, 1, 1, '2021-05-08', 1, 258, 'anaconda', 'logo.png', 1),
-(4, 'ultima prueba', 23, 1, 1, '2021-05-14', 1, 569, '', '20210514132757.jpg', 1);
+(4, 'ultima prueba', 23, 1, 1, '2021-05-14', 1, 569, '', '20210514132757.jpg', 1),
+(5, 'Matemáticas para todos.', 64, 2, 1, '2026-03-24', 4, 360, 'Libro de matemáticas', 'logo.png', 1),
+(6, 'Álgebra para todos.', 27, 3, 1, '2026-01-22', 3, 236, 'Libro de Álgebra', 'logo.png', 1);
 
 -- --------------------------------------------------------
 
@@ -173,7 +177,7 @@ CREATE TABLE `materia` (
   `id` int(11) NOT NULL,
   `materia` text NOT NULL,
   `estado` int(11) NOT NULL DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `materia`
@@ -195,7 +199,7 @@ CREATE TABLE `permisos` (
   `id` int(11) NOT NULL,
   `nombre` varchar(50) NOT NULL,
   `tipo` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `permisos`
@@ -227,7 +231,7 @@ CREATE TABLE `prestamo` (
   `cantidad` int(11) NOT NULL,
   `observacion` text NOT NULL,
   `estado` int(11) NOT NULL DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `prestamo`
@@ -249,7 +253,7 @@ CREATE TABLE `usuarios` (
   `nombre` varchar(200) NOT NULL,
   `clave` varchar(100) NOT NULL,
   `estado` int(11) NOT NULL DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `usuarios`
@@ -338,7 +342,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `autor`
 --
 ALTER TABLE `autor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `configuracion`
@@ -368,7 +372,7 @@ ALTER TABLE `estudiante`
 -- AUTO_INCREMENT de la tabla `libro`
 --
 ALTER TABLE `libro`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `materia`

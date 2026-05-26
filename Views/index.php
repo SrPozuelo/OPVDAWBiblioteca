@@ -57,6 +57,32 @@
             return false;
         });
     </script>
+    <div id="footer"><a href="../OPVDAWBiblioteca/doc/index.html">Documentación</a></div>
+    <style>
+        #footer{
+            display:flex;
+            position:fixed;
+            width:100dvw;
+            height:6dvh;
+            bottom:0;
+            align-items:center;
+            justify-content:center;
+            background-color:transparent/*#e3e3e3*/;
+            & a{
+                display:flex;
+                width:10dvw;
+                height:4dvh;
+                background-color:#009687;
+                color:white;
+                border-radius:10px;
+                text-decoration:none;
+                align-items:center;
+                justify-content:center;
+                font-size:1.2rem;
+                font-weight:bold;
+            }
+        }
+    </style>
 </body>
 
 </html>
